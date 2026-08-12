@@ -1,8 +1,8 @@
 from odoo import models, fields
 
+# data base model for the property app and their columns
 class PropertyModel (models.Model):
     _name = 'property.model'
-
     name = fields.Char()
     description = fields.Char()
     post_code = fields.Char()

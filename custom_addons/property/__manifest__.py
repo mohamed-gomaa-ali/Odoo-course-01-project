@@ -1,3 +1,4 @@
+# the addons(App) details that appear in odoo webstore
 {
     'name': 'Addons One',
     'author': 'Mohamed Gomaa Ali',
