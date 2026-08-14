@@ -6,7 +6,7 @@ class Property (models.Model):
     name = fields.Char()
     description = fields.Char()
     post_code = fields.Char()
-    date_availabilty = fields.Date()
+    date_availability = fields.Date()
     expected_price = fields.Float()
     selling_price = fields.Float()
     bed_rooms = fields.Integer()

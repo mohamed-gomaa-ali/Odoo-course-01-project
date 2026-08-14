@@ -1,11 +1,11 @@
 <odoo>
-	<!--the first menu Architecture-->
+	<!--the first level menu Architecture-->
     <menuitem
         id= "addons_one_menu_root"
         name= "Real state"
     />
 
-	<!--the second menu Architecture-->
+	<!--the second level menu Architecture-->
     <menuitem
 		    id= "property_menu_root"
 		    name= "Property 02 level"
