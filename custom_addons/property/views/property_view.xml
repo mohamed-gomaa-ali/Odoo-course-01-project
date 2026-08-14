@@ -1,0 +1,26 @@
+<odoo>
+    <record id = "property_view_tree" model="ir.ui.view">
+        <field name="name">Property Tree</field>
+        <field name="model">property</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="date_availabilty"/>
+                <field name="expected_price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="property_action" model="ir.actions.act_window">
+        <field name = "name">Property Action</field>
+        <field name = "res_model">property</field>
+    </record>
+
+    <menuitem
+        id = "property_menu_item"
+        name = "Property 03 level"
+        parent = "property_menu_root"
+        action  = "property_action"
+    />
+</odoo>
