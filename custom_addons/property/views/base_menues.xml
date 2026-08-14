@@ -8,7 +8,7 @@
 	<!--the second menu Architecture-->
     <menuitem
 		    id= "property_menu_root"
-		    name= "Property"
+		    name= "Property 02 level"
 		    parent= "addons_one_menu_root"
-		/>
+	/>
 </odoo>

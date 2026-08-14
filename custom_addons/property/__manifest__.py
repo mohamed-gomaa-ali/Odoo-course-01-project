@@ -8,7 +8,9 @@
         'base',
     ],
     'data': [
-        'views/base_menues.xml'
-    ],
+        'security/ir.model.access.csv',
+        'views/base_menues.xml',
+		'views/property_view.xml',
+],
     'application': True,
 }
