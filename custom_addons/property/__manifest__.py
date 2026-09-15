@@ -9,7 +9,7 @@
     ],
     'data': [
         'views/base_menues.xml',
-		'views/property_view.xml',
+        'views/property_view.xml',
         'security/ir.model.access.csv',
     ],
     'application': True,

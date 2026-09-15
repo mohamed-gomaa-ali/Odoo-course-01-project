@@ -21,9 +21,46 @@
         </field>
     </record>
 
+    <!--the form view record-->
+    <record id = "property_view_form" model="ir.ui.view">
+        <field name="name">Property Form</field>
+        <field name="model">property</field>
+        <field name="arch" type="xml">
+            <!--the model "property" fields-->
+            <form>
+                <sheet>
+                    <div class ="oe_title">
+                        <label for = "name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string  = "General Info.">
+                            <field name="description"/>
+                            <field name="post_code"/>
+                            <field name="expected_price"/>
+                            <field name="selling_price"/>
+                            <field name="date_availability"/>
+                        </group>
+                        <group string  = "Additional Info.">
+                            <field name="bed_rooms"/>
+                            <field name="living_area"/>
+                            <field name="garage"/>
+                        </group>
+                    </group>
+                    <group string="gardian">
+                        <field name="gardian_area"/>
+                        <field name="gardian_oriantaition"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <!--the third level menu action record-->
     <record id="property_action" model="ir.actions.act_window">
-        <field name = "name">Property Action</field>
+        <field name = "name">Flats data</field>
         <field name = "res_model">property</field>
     </record>
 
