@@ -4,7 +4,7 @@
         <field name="name">Property Tree</field>
         <field name="model">property</field>
         <field name="arch" type="xml">
-            <!--the model "property" fields-->
+            <!--the model "property" fields to show it in the list view-->
             <list>
                 <field name="name"/>
                 <field name="description"/>
@@ -29,6 +29,7 @@
             <!--the model "property" fields-->
             <form>
                 <sheet>
+                    <!--make the "Name" to header of the page-->
                     <div class ="oe_title">
                         <label for = "name"/>
                         <h1>
@@ -36,6 +37,7 @@
                         </h1>
                     </div>
                     <group>
+                        <!--group General Info. for data-->
                         <group string  = "General Info.">
                             <field name="description"/>
                             <field name="post_code"/>
@@ -43,12 +45,16 @@
                             <field name="selling_price"/>
                             <field name="date_availability"/>
                         </group>
+
+                        <!--group Additional Info. for data-->
                         <group string  = "Additional Info.">
                             <field name="bed_rooms"/>
                             <field name="living_area"/>
                             <field name="garage"/>
                         </group>
                     </group>
+
+                    <!--group gardian-->
                     <group string="gardian">
                         <field name="gardian_area"/>
                         <field name="gardian_oriantaition"/>
@@ -58,7 +64,29 @@
         </field>
     </record>
 
-    <!--the third level menu action record-->
+    <!--the search view record-->
+    <record id = "property_view_search" model="ir.ui.view">
+        <field name="name">Property Search</field>
+        <field name="model">property</field>
+        <field name="arch" type="xml">
+            <search>
+                <!--fields to search with it in search bar-->
+                <field name="name"/>
+                <field name="post_code"/>
+                <field name="description"/>
+
+                <!--filters to use it, like with garage, Price Range, ...etc-->
+                <filter name="is_garage" string="With garage" domain="[('garage','=','set')]"/>
+                <filter name="is_not_garage" string="Without garage" domain="[('garage','!=','True')]"/>
+                <filter name="Expected_Price_Range" string="Price Range" domain="[('expected_price','>=','75000')]"/>
+
+                <!--groups to use it, like have a garage-->
+                <filter name="Group_by_Garage" string="Group by Garage" context="{'group_by':'garage'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!--menu action record for third level menu-->
     <record id="property_action" model="ir.actions.act_window">
         <field name = "name">Flats data</field>
         <field name = "res_model">property</field>
