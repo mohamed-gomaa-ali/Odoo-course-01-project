@@ -3,23 +3,24 @@ from odoo import models, fields, api
 # database model for the property app and their columns
 class Property (models.Model):
     _name = 'property'
-    name = fields.Char(required = True)
-    description = fields.Char()
-    post_code = fields.Char(required = 1)
-    date_availability = fields.Date()
-    expected_price = fields.Float()
-    selling_price = fields.Float()
-    bed_rooms = fields.Integer()
-    living_area = fields.Integer()
-    garage = fields.Boolean()
-    gardian_area = fields.Integer()
+    name = fields.Char(required = True, size = 25)
+    description = fields.Char(default = "bla bla bla", size = 250)
+    post_code = fields.Char(required = 1, default = 12345, size = 6)
+    date_availability = fields.Datetime(default = fields.Datetime.now())
+    expected_price = fields.Float(digits=(0,5))
+    selling_price = fields.Float(default = 200.00)
+    bed_rooms = fields.Integer(default = 2)
+    living_area = fields.Integer(default = 5)
+    garage = fields.Boolean(default = 1)
+    gardian_area = fields.Integer(default = 25)
     gardian_oriantaition = fields.Selection(
         [
             ("north", "North"),
             ("south", "South"),
             ("east", "East"),
             ("west", "West")
-        ]
+        ],
+        default= "east"
     )
 
     # Decorators
