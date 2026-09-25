@@ -33,24 +33,24 @@
                     <div class ="oe_title">
                         <label for = "name"/>
                         <h1>
-                            <field name="name"/>
+                            <field name="name" placeholder="Enter your name"/>
                         </h1>
                     </div>
                     <group>
                         <!--group General Info. for data-->
                         <group string  = "General Info.">
-                            <field name="description"/>
-                            <field name="post_code"/>
-                            <field name="expected_price"/>
-                            <field name="selling_price"/>
-                            <field name="date_availability"/>
+                            <field name="description" placeholder="Description"/>
+                            <field name="post_code" placeholder="Post Code"/>
+                            <field name="expected_price" placeholder="Expected Price"/>
+                            <field name="selling_price" placeholder="Selling Price"/>
+                            <field name="date_availability" placeholder="Date Availability"/>
                         </group>
 
                         <!--group Additional Info. for data-->
                         <group string  = "Additional Info.">
-                            <field name="bed_rooms"/>
-                            <field name="living_area"/>
-                            <field name="garage"/>
+                            <field name="bed_rooms" placeholder="Number of Bedrooms"/>
+                            <field name="living_area" placeholder="Living Area"/>
+                            <field name="garage" placeholder="Has Garage"/>
                         </group>
                     </group>
 
@@ -92,10 +92,18 @@
         <field name = "res_model">property</field>
     </record>
 
+    <!--the 4th level menu Architecture-->
+    <menuitem
+        id = "property_menu_item_01"
+        name = "Property 03 level"
+        parent = "property_menu_root"
+        action  = "property_action"
+    />
+
     <!--the third level menu Architecture-->
     <menuitem
-        id = "property_menu_item"
-        name = "Property 03 level"
+        id = "property_menu_item_02"
+        name = "Property 04 level"
         parent = "property_menu_root"
         action  = "property_action"
     />
