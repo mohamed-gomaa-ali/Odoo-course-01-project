@@ -23,6 +23,12 @@ class Property (models.Model):
         default= "east"
     )
 
+    # Data tier constrains
+    # Make name as a Unique attribute in all rows
+    _sql_constraints = [
+        ("unique_name", "unique('name')", "you enter an exist name")
+    ]
+
     # Decorators
     # check bedrooms filed if have 0 or not
     @api.constrains('bed_rooms')
