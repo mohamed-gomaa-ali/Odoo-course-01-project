@@ -1,4 +1,6 @@
 from odoo import models, fields, api
+from odoo.tools import Query
+
 
 # database model for the property app and their columns
 class Property(models.Model):
@@ -52,5 +54,24 @@ class Property(models.Model):
     @api.model_create_multi
     def create(self, vals):
         record = super(Property, self).create(vals)
-        print("Property record created successfully:")
+        print("Hello from Create method override")
+        return record
+
+    # CRUD methods: Read / Search / View
+    @api.model
+    def _search(self, domain, offset=0, limit=None, order=None):
+        record = super(Property, self)._search(domain, offset=0, limit=None, order=None)
+        print("Hello from Search method override")
+        return record
+
+    # CRUD methods: Update
+    def write(self, vals):
+        record = super(Property, self).write(vals)
+        print("Hello from Update method override")
+        return record
+
+    # CRUD methods: Delete
+    def unlink(self):
+        record = super(Property, self).unlink()
+        print("Hello from Delete method override")
         return record
