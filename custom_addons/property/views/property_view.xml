@@ -7,6 +7,7 @@
             <!--the model "property" fields to show it in the list view-->
             <list>
                 <field name="name"/>
+                <field name="owner_id"/>
                 <field name="description"/>
                 <field name="post_code"/>
                 <field name="date_availability"/>
@@ -17,6 +18,7 @@
                 <field name="garage"/>
                 <field name="gardian_area"/>
                 <field name="gardian_oriantaition"/>
+                <field name="tag_ids"/>
             </list>
         </field>
     </record>
@@ -48,9 +50,11 @@
 
                         <!--group Additional Info. for data-->
                         <group string  = "Additional Info.">
+                            <field name="owner_id" placeholder="Onwer"/>
                             <field name="bed_rooms" placeholder="Number of Bedrooms"/>
                             <field name="living_area" placeholder="Living Area"/>
                             <field name="garage" placeholder="Has Garage"/>
+                            <field name="tag_ids" widget="many2many_tags"/>
                         </group>
                     </group>
 
@@ -95,15 +99,7 @@
     <!--the 4th level menu Architecture-->
     <menuitem
         id = "property_menu_item_01"
-        name = "Property 03 level"
-        parent = "property_menu_root"
-        action  = "property_action"
-    />
-
-    <!--the third level menu Architecture-->
-    <menuitem
-        id = "property_menu_item_02"
-        name = "Property 04 level"
+        name = "Property List"
         parent = "property_menu_root"
         action  = "property_action"
     />

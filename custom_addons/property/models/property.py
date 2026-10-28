@@ -1,6 +1,4 @@
-from odoo import models, fields, api
-from odoo.tools import Query
-
+from odoo import models, fields
 
 # database model for the property app and their columns
 class Property(models.Model):
@@ -25,53 +23,56 @@ class Property(models.Model):
         ],
         default= "east"
     )
+    owner_id = fields.Many2one('owner')
+    tag_ids = fields.Many2many("tag")
 
 
-    # Data tier constrains
-    # Make name as a Unique attribute in all rows
-    _sql_constraints = [
-        ("unique_name", "unique('name')", "you enter an exist name")
-    ]
 
-
-    # Decorators
-    # check bedrooms filed if have 0 or not
-    @api.constrains('bed_rooms')
-    def _check_bedrooms_greater_zero(self):
-        for record in self:
-            if record.bed_rooms == 0:
-                raise models.ValidationError("The number of bedrooms must be greater than zero.")
-
-    # check living_area filed if have 0 or not
-    @api.constrains('living_area')
-    def _check_living_area_greater_zero(self):
-        for record in self:
-            if record.living_area == 0:
-                raise models.ValidationError("The living area must be greater than zero.")
-
-
-    # CRUD methods: Create
-    @api.model_create_multi
-    def create(self, vals):
-        record = super(Property, self).create(vals)
-        print("Hello from Create method override")
-        return record
-
-    # CRUD methods: Read / Search / View
-    @api.model
-    def _search(self, domain, offset=0, limit=None, order=None):
-        record = super(Property, self)._search(domain, offset=0, limit=None, order=None)
-        print("Hello from Search method override")
-        return record
-
-    # CRUD methods: Update
-    def write(self, vals):
-        record = super(Property, self).write(vals)
-        print("Hello from Update method override")
-        return record
-
-    # CRUD methods: Delete
-    def unlink(self):
-        record = super(Property, self).unlink()
-        print("Hello from Delete method override")
-        return record
+    # # Data tier constrains
+    # # Make name as a Unique attribute in all rows
+    # _sql_constraints = [
+    #     ("unique_name", "unique('name')", "you enter an exist name")
+    # ]
+    #
+    #
+    # # Decorators
+    # # check bedrooms filed if have 0 or not
+    # @api.constrains('bed_rooms')
+    # def _check_bedrooms_greater_zero(self):
+    #     for record in self:
+    #         if record.bed_rooms == 0:
+    #             raise models.ValidationError("The number of bedrooms must be greater than zero.")
+    #
+    # # check living_area filed if have 0 or not
+    # @api.constrains('living_area')
+    # def _check_living_area_greater_zero(self):
+    #     for record in self:
+    #         if record.living_area == 0:
+    #             raise models.ValidationError("The living area must be greater than zero.")
+    #
+    #
+    # # CRUD methods: Create
+    # @api.model_create_multi
+    # def create(self, vals):
+    #     record = super(Property, self).create(vals)
+    #     print("Hello from Create method override")
+    #     return record
+    #
+    # # CRUD methods: Read / Search / View
+    # @api.model
+    # def _search(self, domain, offset=0, limit=None, order=None):
+    #     record = super(Property, self)._search(domain, offset=0, limit=None, order=None)
+    #     print("Hello from Search method override")
+    #     return record
+    #
+    # # CRUD methods: Update
+    # def write(self, vals):
+    #     record = super(Property, self).write(vals)
+    #     print("Hello from Update method override")
+    #     return record
+    #
+    # # CRUD methods: Delete
+    # def unlink(self):
+    #     record = super(Property, self).unlink()
+    #     print("Hello from Delete method override")
+    #     return record
