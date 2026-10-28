@@ -5,10 +5,17 @@
         name= "Real state"
     />
 
-	<!--the second level menu Architecture-->
+	<!--the second level menu Architecture - 1st list items-->
     <menuitem
 		    id= "property_menu_root"
-		    name= "Property 02 level"
+		    name= "Property"
+		    parent= "addons_one_menu_root"
+	/>
+
+	<!--the second level menu Architecture - 2nd list items-->
+    <menuitem
+		    id= "owner_menu_root"
+		    name= "Configuration"
 		    parent= "addons_one_menu_root"
 	/>
 </odoo>
