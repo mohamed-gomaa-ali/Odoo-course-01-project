@@ -1,0 +1,51 @@
+<odoo>
+    <!--the list view record-->
+    <record id = "tag_view_tree" model="ir.ui.view">
+        <field name="name">Tag Tree</field>
+        <field name="model">tag</field>
+        <field name="arch" type="xml">
+            <!--the model "tag" fields to show it in the list view-->
+            <list>
+                <field name="name"/>
+                <field name="property_ids"/>
+            </list>
+        </field>
+    </record>
+
+    <!--the form view record-->
+    <record id = "tag_view_form" model="ir.ui.view">
+        <field name="name">Tag Form</field>
+        <field name="model">tag</field>
+        <field name="arch" type="xml">
+            <!--the model "tag" fields-->
+            <form>
+                <sheet>
+                    <!--make the "Name" to header of the page-->
+                    <div class ="oe_title">
+                        <label for = "name"/>
+                        <h1>
+                            <field name="name" placeholder="Enter your name"/>
+                        </h1>
+                        <group>
+                            <field name="property_ids" widget="many2many_tags"/>
+                        </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--menu action record for third level menu-->
+    <record id="tag_action" model="ir.actions.act_window">
+        <field name = "name">Tag data</field>
+        <field name = "res_model">tag</field>
+    </record>
+
+    <!--the 4th level menu Architecture-->
+    <menuitem
+        id = "tag_menu_item_01"
+        name = "Tag"
+        parent = "owner_menu_root"
+        action  = "tag_action"
+    />
+</odoo>
