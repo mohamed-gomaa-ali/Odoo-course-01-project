@@ -1,21 +1,22 @@
 <odoo>
 	<!--the first level menu Architecture-->
     <menuitem
-        id= "addons_one_menu_root"
-        name= "Real state"
+        id= "Real_Estate_menu_root"
+        name= "Real Estate"
+		web_icon= "property,static/description/icon.png"
     />
 
 	<!--the second level menu Architecture - 1st list items-->
     <menuitem
-		    id= "property_menu_root"
+		    id= "property_menu"
 		    name= "Property"
-		    parent= "addons_one_menu_root"
+		    parent= "Real_Estate_menu_root"
 	/>
 
 	<!--the second level menu Architecture - 2nd list items-->
     <menuitem
-		    id= "owner_menu_root"
+		    id= "owner_menu"
 		    name= "Configuration"
-		    parent= "addons_one_menu_root"
+		    parent= "Real_Estate_menu_root"
 	/>
 </odoo>

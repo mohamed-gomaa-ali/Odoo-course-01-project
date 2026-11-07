@@ -100,7 +100,7 @@
     <menuitem
         id = "property_menu_item_01"
         name = "Property List"
-        parent = "property_menu_root"
+        parent = "property_menu"
         action  = "property_action"
     />
 </odoo>
