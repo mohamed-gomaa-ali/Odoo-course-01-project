@@ -45,7 +45,7 @@
     <menuitem
         id = "tag_menu_item_01"
         name = "Tag"
-        parent = "owner_menu_root"
+        parent = "owner_menu"
         action  = "tag_action"
     />
 </odoo>
