@@ -48,7 +48,6 @@
                         <!--group General Info. for data-->
                         <group string  = "General Info.">
                             <field name="description" placeholder="Description"/>
-                            <field name="status"/>
                             <field name="post_code" placeholder="Post Code"/>
                             <field name="expected_price" placeholder="Expected Price"/>
                             <field name="selling_price" placeholder="Selling Price"/>
