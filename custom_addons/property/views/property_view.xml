@@ -9,6 +9,7 @@
                 <field name="name"/>
                 <field name="owner_id"/>
                 <field name="description"/>
+                <field name="status"/>
                 <field name="post_code"/>
                 <field name="date_availability"/>
                 <field name="expected_price" optional="show"/>
@@ -31,6 +32,11 @@
             <!--the model "property" fields-->
             <form>
                 <sheet>
+                    <!--status bar widget-->
+                    <header>
+                        <field name="status" widget="statusbar" statusbar_visible="draft, sold, pending" options="{'clickable': 1}"/>
+                    </header>
+
                     <!--make the "Name" to header of the page-->
                     <div class ="oe_title">
                         <label for = "name"/>
@@ -42,6 +48,7 @@
                         <!--group General Info. for data-->
                         <group string  = "General Info.">
                             <field name="description" placeholder="Description"/>
+                            <field name="status"/>
                             <field name="post_code" placeholder="Post Code"/>
                             <field name="expected_price" placeholder="Expected Price"/>
                             <field name="selling_price" placeholder="Selling Price"/>
