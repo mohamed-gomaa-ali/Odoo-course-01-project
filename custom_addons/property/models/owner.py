@@ -15,3 +15,17 @@ class Owner(models.Model):
             ('three_property','3 Properties')
         ], default = "one_property"
     )
+
+
+    # buttons actions
+    def action_one_property(self):
+        for rec in self:
+            rec.status = 'one_property'
+
+    def action_two_property(self):
+        for rec in self:
+         rec.status = 'two_property'
+
+    def action_three_property(self):
+        for rec in self:
+          rec.status = 'three_property'

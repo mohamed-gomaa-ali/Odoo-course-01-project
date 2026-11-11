@@ -25,7 +25,16 @@
                 <sheet>
                     <!--status bar widget-->
                     <header>
-                        <field name="status" widget="statusbar" options="{'clickable': 1}"/>
+                        <!--Header bar Buttons-->
+                        <button name="action_one_property" string="1 Property" type="object" class="btn-primary"
+                                invisible ="status == 'one_property'"/>
+                        <button name="action_two_property" string="2 Properties" type="object" class="btn-secondary"
+                                invisible="status != 'one_property'"/>
+                        <button name="action_three_property" string="3 Properties" type="object" class="btn-success"
+                                invisible="status != 'two_property'"/>
+
+                        <!--Header bar Status-->
+                        <field name="status" widget="statusbar"/>
                     </header>
 
                     <!--make the "Name" to header of the page-->
