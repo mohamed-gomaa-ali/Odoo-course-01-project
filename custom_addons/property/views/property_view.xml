@@ -32,9 +32,18 @@
             <!--the model "property" fields-->
             <form>
                 <sheet>
-                    <!--status bar widget-->
+                    <!--status bar header-->
                     <header>
-                        <field name="status" widget="statusbar" statusbar_visible="draft, sold, pending" options="{'clickable': 1}"/>
+                        <!--Header bar Buttons-->
+                        <button name="action_draft" string="Draft" type="object" class="btn-primary"
+                                invisible="status == 'draft'"/>
+                        <button name="action_pending" string="Pending" type="object" class="btn-secondary"
+                                invisible="status != 'draft'"/>
+                        <button name="action_sold" string="Sold" type="object" class="btn-success"
+                                invisible="status != 'pending'"/>
+
+                        <!--Header bar Status-->
+                        <field name="status" widget="statusbar"/>
                     </header>
 
                     <!--make the "Name" to header of the page-->

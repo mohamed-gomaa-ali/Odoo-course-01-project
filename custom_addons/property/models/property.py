@@ -34,6 +34,19 @@ class Property(models.Model):
         default= "draft"
     )
 
+    # buttons actions
+    def action_draft(self):
+        for rec in self:
+            rec.status = 'draft'
+
+    def action_pending(self):
+        for rec in self:
+            rec.status = 'pending'
+
+    def action_sold(self):
+        for rec in self:
+            rec.status = 'sold'
+
 
     # # Data tier constrains
     # # Make name as a Unique attribute in all rows
